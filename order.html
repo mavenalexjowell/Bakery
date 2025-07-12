@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cake Order Page</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="images/logobaru.png" alt="The Bread Basket Logo" class="logo-img">
+      <h1 class="logo-text">The Bread Basket</h1>
+    </div>
+    
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      
+      <div class="dropdown-nav">
+        <a class="dropbtn" href="Menu.html">Menu ▼</a>
+        <div class="dropdown-content">
+          <a href="Menu.html#cakes">Cakes</a>
+          <a href="Menu.html#cookies">Cookies</a>
+          <a href="Menu.html#cupcakes">Cupcakes</a>
+          <a href="Menu.html#pastries">Pastries</a>
+          <a href="Menu.html#breads">Breads</a>
+        </div>
+      </div>
+      
+      <a href="order.html" class="active">Order</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+  
+  <div class="container">
+    
+    <div class="filter-search-wrapper">
+      <div class="filter-tabs">
+        <button class="tab-btn active" data-category="Cakes">Cakes</button>
+        <button class="tab-btn" data-category="Cookies">Cookies</button>
+        <button class="tab-btn" data-category="Cupcake">Cupcake</button>
+        <button class="tab-btn" data-category="Pastries">Pastries</button>
+        <button class="tab-btn" data-category="Breads">Breads</button>
+      </div>
+      
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <div class="search-bar">
+          <input type="text" id="searchInput" placeholder="Search..." />
+          <span class="search-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="#ff7eb3" width="16" height="16" viewBox="0 0 24 24">
+              <path d="M21.53 20.47l-4.94-4.94a7.5 7.5 0 10-1.06 1.06l4.94 4.94a.75.75 0 101.06-1.06zM10.5 17a6.5 6.5 0 110-13 6.5 6.5 0 010 13z"/>
+            </svg>
+          </span>
+          <span class="clear-icon" id="clearSearch">×</span>
+        </div>
+        
+        <div class="cart-icon" style="cursor: pointer; position: relative;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#6d5c5c" viewBox="0 0 24 24">
+            <path d="M7 18c-1.104 0-2 .896-2 2s.896 2 2 2
+            2-.896 2-2-.896-2-2-2zm10 
+            0c-1.104 0-2 .896-2 2s.896 2 
+            2 2 2-.896 2-2-.896-2-2-2zM7.16 
+            14l.94-2h7.86c.77 0 1.45-.44 
+            1.79-1.14l3.3-6.59A1 1 0 0019.21 
+            3H5.21l-.94-2H1v2h2l3.6 
+            7.59-1.35 2.45C4.52 14.37 
+            5.48 16 7 16h12v-2H7.16z"/>
+          </svg>
+          <span class="cart-count">0</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- CAKES -->
+     <div class="menu-section" data-category="Cakes"></div>
+     <h2 class="menu-title">Cakes</h2>
+     <ul class="cake-list">
+      <li>
+        <div class="cake-item">
+          <img src="images/SnickersCake.jpeg" alt="Snickers Cake">
+          <div class="cake-details" style="text-align: center;">
+            <div class="cake-name" style="font-weight: bold;">Snickers Cake</div>
+            <div class="cake-price" style="color: #6d5c5c;">RM150.00</di>
+              <button onclick="addToOrder('Snickers Cake', 150.00)">Add to Order</button>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="cake-item">
+            <img src="images/OreoChocolateCake.jpeg" alt="Oreo Chocolate Cake">
+            <div class="cake-details" style="text-align: center;">
+              <div class="cake-name">Oreo Chocolate Cake</div>
+              <div class="cake-price">RM120.00</div>
+              <button onclick="addToOrder('Oreo Chocolate Cake', 120.00)">Add to Order</button>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="cake-item">
+            <img src="images/LotusBiscoffCheesecake.jpeg" alt="Lotus Biscoff Cake">
+            <div class="cake-details" style="text-align: center;">
+              <div class="cake-name">Lotus Biscoff Cake</div>
+              <div class="cake-price">RM125.00</div>
+              <button onclick="addToOrder('Lotus Biscoff Cake', 125.00)">Add to Order</button>
+            </div>
+          </div>
+        </li>
+      </ul>
+      
+      <!-- COOKIES -->
+       <div class="menu-section" data-category="Cookies" style="display: none;"></div>
+       <h2 class="menu-title">Cookies</h2>
+       <ul class="cake-list">
+        <li>
+          <div class="cake-item">
+            <img src="images/OreoChocolateCookie.jpeg" alt="Oreo Chocolate Cookies">
+            <div class="cake-details" style="text-align: center;">
+              <div class="cake-name">Oreo Chocolate Cookies</div>
+              <div class="cake-price">RM40.00</div>
+              <button onclick="addToOrder('Oreo Chocolate Cookies', 40.00)">Add to Order</button>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="cake-item">
+            <img src="images/PeanutCookie.jpeg" alt="Peanut Cookies">
+            <div class="cake-details" style="text-align: center;">
+              <div class="cake-name">Peanut Cookies</div>
+              <div class="cake-price">RM35.90</div>
+              <button onclick="addToOrder('Peanut Cookies', 35.90)">Add to Order</button>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="cake-item">
+            <img src="images/MintChocolateCookie.jpeg" alt="Mint Chocolate Cookies">
+            <div class="cake-details" style="text-align: center;">
+              <div class="cake-name">Mint Chocolate Cookies</div>
+              <div class="cake-price">RM45.00</div>
+              <button onclick="addToOrder('Mint Chocolate Cookies', 45.00)">Add to Order</button>
+            </div>
+          </div>
+        </li>
+      </ul>
+      
+      <!-- CUPCAKES -->
+       <div class="menu-section" data-category="Cupcake" style="display: none;"></div>
+       <h2 class="menu-title">Cupcake</h2>
+       <ul class="cake-list">
+        <li>
+          <div class="cake-item">
+            <img src="images/VanillaCupcake.jpeg" alt="Vanilla Cupcake">
+            <div class="cake-details" style="text-align: center;">
+              <div class="cake-name">Vanilla Cupcake</div>
+              <div class="cake-price">RM80.00</div>
+              <button onclick="addToOrder('Vanilla Cupcake', 80.00)">Add to Order</button>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="cake-item">
+            <img src="images/MintChocolateChipCupcake.jpeg" alt="Mint Chocolate Chip Cupcake">
+            <div class="cake-details" style="text-align: center;">
+              <div class="cake-name">Mint Chocolate Chip Cupcake</div>
+              <div class="cake-price">RM80.00</div>
+              <button onclick="addToOrder('Mint Chocolate Chip Cupcake', 80.00)">Add to Order</button>
+            </div>
+          </div>
+        </li>
+      </ul>
+      
+      <!-- PASTRIES -->
+       <div class="menu-section" data-category="Pastries" style="display: none;"></div>
+       <h2 class="menu-title">Pastries</h2>
+       <ul class="cake-list">
+        <li>
+          <div class="cake-item">
+            <img src="images/ChocolateCroissants.jpeg" alt="Chocolate Croissant">
+            <div class="cake-details" style="text-align: center;">
+              <div class="cake-name">Chocolate Croissant</div>
+              <div class="cake-price">RM35.00</div>
+              <button onclick="addToOrder('Chocolate Croissant', 35.00)">Add to Order</button>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="cake-item">
+            <img src="images/FlakyChocolateCroissants.jpeg" alt="Flanky Chocolate Croissant">
+            <div class="cake-details" style="text-align: center;">
+              <div class="cake-name">Flanky Chocolate Croissant</div>
+              <div class="cake-price">RM38.90</div>
+              <button onclick="addToOrder('Flanky Chocolate Croissant', 38.90)">Add to Order</button>
+            </div>
+          </div>
+        </li>
+      </ul>
+      
+      <!-- BREADS -->
+       <div class="menu-section" data-category="Breads" style="display: none;"></div>
+       <h2 class="menu-title">Breads</h2>
+       <ul class="cake-list">
+        <li>
+          <div class="cake-item">
+            <img src="images/Baguette.jpeg" alt="Baguette">
+            <div class="cake-details" style="text-align: center;">
+              <div class="cake-name">Baguette</div>
+              <div class="cake-price">RM35.00</div>
+              <button onclick="addToOrder('Baguette', 35.00)">Add to Order</button>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="cake-item">
+            <img src="images/HamburgerBuns.jpeg" alt="Hamburger Buns">
+            <div class="cake-details" style="text-align: center;">
+              <div class="cake-name">Hamburger Buns</div>
+              <div class="cake-price">RM55.00</div>
+              <button onclick="addToOrder('Hamburger Buns', 55.00)">Add to Order</button>
+            </div>
+          </div>
+        </li>
+      </ul>
+      
+      <h2>Your Order</h2>
+      <ul id="orderList" class="order-list"></ul>
+      
+      <div class="delivery-options" style="margin-top: 40px;">
+        <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 15px;">
+          <button style="flex: 1; padding: 12px; background-color: #f0ece2; border: 2px solid #6d5c5c; border-radius: 8px; cursor: pointer;">
+            <span style="display: flex; align-items: center; gap: 8px;">
+              🚚 <strong>Local Delivery</strong>
+            </span>
+          </button>
+          <button style="flex: 1; padding: 12px; background-color: #f0ece2; border: 2px solid #6d5c5c; border-radius: 8px; cursor: pointer;">
+            <span style="display: flex; align-items: center; gap: 8px;">
+              🏪 <strong>Store Pickup</strong>
+            </span>
+          </button>
+        </div>
+        
+        <p style="margin: 10px 0; font-weight: bold; color: #6d5c5c;">
+          Enter your postal code into the field below to check if you are eligible for local delivery:
+        </p>
+        
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+          <input type="text" placeholder="Enter your postal code ..." style="flex: 1; padding: 10px; border-radius: 8px; border: 1px solid #aaa;" />
+          <button style="padding: 10px 16px; background-color: #6d5c5c; color: black; border: none; border-radius: 8px; cursor: pointer;">🔍
+          </button>
+        </div>
+        
+        <div style="text-align: right;">
+          <span style="font-weight: bold;">Subtotal RM<span id="deliverySubtotal">0.00</span></span>
+          <small style="color: gray;">Shipping & taxes calculated at checkout</small>
+        </div>
+
+        <div style="text-align: right; margin-top: 15px;">
+          <button onclick="proceedToPayment()" style="padding: 14px 24px; background-color: #4c352c; color: white; font-weight: bold; border: none; border-radius: 8px; cursor: pointer;">
+            Proceed To Payment
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <footer class="custom-footer" id="contact">
+      <div class="footer-container-flex">
+        <img src="images/uitmlogo.png" alt="logo" class="footer-logo" />
+        <small class="footer-copy">&copy; 2025 Bread Basket Bakery. As a part of our IML470 assignment.</small>
+      </div>
+    </footer>
+    
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

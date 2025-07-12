@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - The Bread Basket</title>
+
+  <style>
+    :root {
+      --primary-brown: #5a3e3e; 
+      --light-brown: #e8c4c4;  
+      --cream-bg: #f9f1f0;    
+      --text-dark: #3a2a2a;   
+      --border-color: #d1a3a3; 
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    body {
+      font-family: 'Georgia', serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--cream-bg);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: white;
+      padding: 20px;
+      border-bottom: 1px solid var(--light-brown);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      background-color: white; 
+      padding: 5px 10px;
+      border-radius: 4px;
+    }
+
+    .logo-img {
+      height: 60px;
+      width: auto;
+      mix-blend-mode: multiply;
+    }
+
+    .logo-text {
+      margin: 0;
+      font-size: 1.5rem;
+      color: var(--primary-brown);
+    }
+
+    nav {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+
+    nav a, .dropbtn {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #4e2a1e;
+      font-weight: bold;
+      font-size: 16px;
+      padding: 10px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    nav a.active, nav a:hover {
+      text-decoration: underline;
+    }
+
+    .dropdown-nav {
+      display: inline-block;
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 160px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      margin-top: 5px;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 10px;
+      color: #4e2a1e;
+      text-decoration: none;
+      text-align: left;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f2c1a3;
+    }
+
+    .dropdown-nav:hover .dropdown-content {
+      display: block;
+    }
+
+    .about-container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    section {
+      margin-bottom: 30px;
+      padding: 20px;
+      background-color: #fffcf5;
+      border: 2px solid #4a2c2a;
+      border-radius: 12px;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    section:hover {
+      transform: scale(1.02);
+    }
+
+    h2, h3 {
+      color: #4a2c2a;
+      margin-bottom: 10px;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .column {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .video-box {
+      background-color: #fffcf5;
+      border: 2px solid #4a2c2a;
+      border-radius: 12px;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .video-box:hover {
+      transform: scale(1.02);
+    }
+
+    .video-container {
+      width: 60%; 
+      margin: 0 auto; 
+    }
+
+    .video-box h3 {
+      text-align: center; 
+    }
+
+    .achievements-box {
+      background-color: rgba(255, 252, 245, 0.8);
+      border: 1.5px solid #a77b6d;
+      border-radius: 16px;
+      padding: 25px;
+      margin-top: 30px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .achievements-box:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .achievements-text {
+      font-style: italic;
+      margin-bottom: 20px;
+      color: #5a3e3e;
+    }
+
+    .certificates {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .certificates img {
+      max-width: 120px;
+      max-height: 100px;
+      object-fit: contain;
+      border: 2px solid #d1a3a3;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+      background-color: white;
+    }
+
+    .certificates img:hover {
+      transform: scale(1.05);
+      border-color: #c67c6f;
+    }
+
+    .custom-footer {
+      background-color: var(--primary-brown);
+      color: white;
+      padding: 30px 5%;
+      font-size: 0.9rem;
+    }
+
+    .footer-container-flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      max-width: 100px;
+      height: auto;
+    }
+
+    .footer-copy {
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="images/logobaru.png" alt="The Bread Basket Logo" class="logo-img">
+      <h1 class="logo-text">The Bread Basket</h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+
+      <div class="dropdown-nav">
+        <a class="dropbtn" href="Menu.html">Menu ▼</a>
+        <div class="dropdown-content">
+          <a href="#cakes">Cakes</a>
+          <a href="#cookies">Cookies</a>
+          <a href="#cupcakes">Cupcakes</a>
+          <a href="#pastries">Pastries</a>
+          <a href="#breads">Breads</a>
+        </div>
+      </div>
+
+      <a href="order.html">Order</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="about-container">
+    <section class="intro">
+      <h2>About Us</h2>
+      <p>At The Bread Basket, baking is more than just a craft—it’s a heartfelt tradition. Founded in 2019 in Kota Kinabalu, Sabah, our bakery began as a small family dream fueled by the love of creating wholesome, delicious treats. Every loaf, pastry, and cake that comes out of our oven is made with carefully selected ingredients, a dash of creativity, and a whole lot of care.</p>
+      <p>We specialize in a wide range of baked goods—from classic sourdough and buttery croissants to customized celebration cakes—all handcrafted daily to ensure freshness and flavor. Whether you're stopping by for your morning coffee and a pastry or picking up dessert for a special occasion, we’re here to make your day a little sweeter.</p>
+    </section>
+
+    <div class="row">
+      <section class="column mission">
+        <h3>Our Mission</h3>
+        <p>To deliver consistently fresh, high-quality baked goods made with love and integrity, support our local community through sustainable practices and heartfelt services, and inspire happiness through flavours that bring people together.</p>
+      </section>
+
+      <section class="column vision">
+        <h3>Our Vision</h3>
+        <p>To be a beloved neighborhood bakery known for our quality, creativity, and heart—where every bite feels like home and every customer becomes part of our story.</p>
+      </section>
+    </div>
+
+    <div class="row">
+      <div class="video-box column">
+        <h3>What We Do</h3>
+        <div class="video-container">
+          <video controls width="100%">
+            <source src="images/the-breadbask.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="achievements-box column">
+    <h3>Achievements & Certificates</h3>
+    <p class="achievements-text">Our passion for baking has been recognized through these milestones. They reflect our commitment to excellence, community, and craft.</p>
+    <div class="certificates">
+      <img src="images/Asia-Pacific-Excellence-Brand-Logo.jpeg" alt="APEB Logo">
+      <img src="images/Mesti-Vector-Logo.jpeg" alt="Mesti Logo">
+      <img src="images/Logo halal.jpeg" alt="Halal Certification">
+    </div>
+  </div>
+
+  <footer class="custom-footer" id="contact">
+    <div class="footer-container-flex">
+      <img src="images/uitmlogo.png" alt="logo" class="footer-logo" />
+      <small class="footer-copy">&copy; 2025 Bread Basket Bakery. As a part of our IML470 assignment.</small>
+    </div>
+  </footer>
+</body>
+</html>

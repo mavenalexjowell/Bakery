@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sweet Delights - Contact Us</title>
+  <style>
+     :root {
+      --primary-brown: #5a3e3e; 
+      --light-brown: #e8c4c4;  
+      --cream-bg: #f9f1f0;    
+      --text-dark: #3a2a2a;   
+      --border-color: #d1a3a3; 
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    body {
+      font-family: 'Georgia', serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--cream-bg);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: white;
+      padding: 20px;
+      border-bottom: 1px solid var(--light-brown);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      background-color: white; 
+      padding: 5px 10px;
+      border-radius: 4px;
+    }
+
+    .logo-img {
+      height: 60px;
+      width: auto;
+      mix-blend-mode: multiply;
+    }
+
+    .logo-text {
+      margin: 0;
+      font-size: 1.5rem;
+      color: var(--primary-brown);
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+
+    nav a, .dropbtn {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #4e2a1e;
+      font-weight: bold;
+      font-size: 16px;
+      padding: 10px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    nav a.active, nav a:hover {
+      text-decoration: underline;
+    }
+
+    .dropdown-nav {
+      display: inline-block;
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 160px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      margin-top: 5px;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 10px;
+      color: #4e2a1e;
+      text-decoration: none;
+      text-align: left;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f2c1a3;
+    }
+
+    .dropdown-nav:hover .dropdown-content {
+      display: block;
+    }
+
+    .contact-container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: var(--primary-brown);
+      text-align: center;
+      margin-bottom: 30px;
+      position: relative;
+      font-weight: normal;
+    }
+
+    .intro-text {
+      text-align: center;
+      margin-bottom: 40px;
+      color: var(--text-dark);
+      font-style: italic;
+    }
+
+    .contact-form {
+      background-color: white;
+      padding: 40px;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--primary-brown);
+      font-weight: bold;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid var(--border-color);
+      border-radius: 3px;
+      font-family: inherit;
+      background-color: #fcf9f9;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary-brown);
+      background-color: white;
+    }
+
+    .form-group textarea {
+      height: 150px;
+      resize: vertical;
+    }
+
+    hr {
+      border: 0;
+      height: 1px;
+      background-color: var(--border-color);
+      margin: 30px 0;
+    }
+
+    button {
+      background-color: var(--primary-brown);
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+      display: block;
+      margin: 0 auto;
+    }
+
+    button:hover {
+      background-color: var(--text-dark);
+    }
+
+    footer {
+      background-color: var(--primary-brown);
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 50px;
+    }
+
+    .footer-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .footer-content img {
+      height: 80px;
+      width: auto;
+    }
+  </style>
+</head>
+
+<body>
+   <header>
+    <div class="logo-container">
+      <img src="images/logobaru.png" alt="The Bread Basket Logo" class="logo-img">
+      <h1 class="logo-text">The Bread Basket</h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+
+      <div class="dropdown-nav">
+        <a class="dropbtn" href="Menu.html">Menu ▼</a>
+        <div class="dropdown-content">
+          <a href="#cakes">Cakes</a>
+          <a href="#cookies">Cookies</a>
+          <a href="#cupcakes">Cupcakes</a>
+          <a href="#pastries">Pastries</a>
+          <a href="#breads">Breads</a>
+        </div>
+      </div>
+
+      <a href="order.html">Order</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="contact-container">
+    <h1>FEEL FREE TO CONTACT US</h1>
+    <p class="intro-text">We are pleased to assist you</p>
+
+    <hr />
+
+    <div class="contact-form">
+      <form>
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Your Email</label>
+          <input type="email" id="email" required />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" />
+        </div>
+
+        <div class="form-group">
+          <label for="category">Enquiry Categories</label>
+          <select id="category" required>
+            <option value="" disabled selected>Please choose an option</option>
+            <option value="order">Order Inquiry</option>
+            <option value="custom">Custom Cake Request</option>
+            <option value="event">Event Catering</option>
+            <option value="feedback">Feedback</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" />
+        </div>
+
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" required></textarea>
+        </div>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <img src="images/uitmlogo.png" alt="UiTM Logo" />
+      <p>&copy; 2025 Bread Basket Bakery. As a part of our IML470 assignment.</p>
+    </div>
+  </footer>
+</body>
+</html>

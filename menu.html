@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menu - Bread Basket Bakery</title>
+  <style>
+     :root {
+      --primary-brown: #5a3e3e; 
+      --light-brown: #e8c4c4;  
+      --cream-bg: #f9f1f0;    
+      --text-dark: #3a2a2a;   
+      --border-color: #d1a3a3; 
+      --light-choco: #5a3e3e;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    body {
+      font-family: 'Georgia', serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--cream-bg);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: white;
+      padding: 20px;
+      border-bottom: 1px solid var(--light-brown);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      background-color: white; 
+      padding: 5px 10px;
+      border-radius: 4px;
+    }
+
+    .logo-img {
+      height: 60px;
+      width: auto;
+      mix-blend-mode: multiply;
+    }
+
+    .logo-text {
+      margin: 0;
+      font-size: 1.5rem;
+      color: var(--primary-brown);
+    }
+
+    nav {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+
+    nav a, .dropbtn {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #4e2a1e;
+      font-weight: bold;
+      font-size: 16px;
+      padding: 10px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    nav a.active, nav a:hover {
+      text-decoration: underline;
+    }
+
+    .dropdown-nav {
+      display: inline-block;
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 160px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      margin-top: 5px;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 10px;
+      color: #4e2a1e;
+      text-decoration: none;
+      text-align: left;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f2c1a3;
+    }
+
+    .dropdown-nav:hover .dropdown-content {
+      display: block;
+    }
+
+    main {
+      padding: 0;
+    }
+
+    .menu-category {
+      margin-bottom: 60px;
+    }
+
+    .menu-header {
+      background-color: var(--light-choco);
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      background-color: #f3ede7;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      padding: 30px;
+      margin: 0 auto;
+      max-width: 100%;
+    }
+
+    .menu-card {
+      width: 250px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      padding: 15px;
+      text-align: center;
+    }
+
+    .menu-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .menu-card h3 {
+      margin: 15px 0 5px;
+      color: var(--primary-brown);
+    }
+
+    footer {
+      background-color: var(--light-choco);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+
+    .footer-flex-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .footer-logo {
+      height: 50px; /* Updated to match the preferred size */
+      width: auto;
+    }
+
+    .footer-copy {
+      color: white;
+      font-size: 0.9rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="images/logobaru.png" alt="The Bread Basket Logo" class="logo-img">
+      <h1 class="logo-text">The Bread Basket</h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      
+      <div class="dropdown-nav">
+        <a class="dropbtn" href="Menu.html">Menu ▼</a>
+        <div class="dropdown-content">
+          <a href="#cakes">Cakes</a>
+          <a href="#cookies">Cookies</a>
+          <a href="#cupcakes">Cupcakes</a>
+          <a href="#pastries">Pastries</a>
+          <a href="#breads">Breads</a>
+        </div>
+      </div>
+      <a href="order.html">Order</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+    
+  <main>
+    <div class="container">
+      <!-- CAKES -->
+       <section id="cakes" class="menu-category cakes">
+        <div class="menu-header">Cakes</div>
+        <div class="card-container">
+          <div class="menu-card">
+            <img src="images/OreoChocolateCake.jpeg" alt="Oreo Chocolate Cake">
+            <h3>Oreo Chocolate Cake</h3>
+            <p>Rich chocolate sponge with Oreo cream layers</p>
+          </div>
+          <div class="menu-card">
+            <img src="images/SnickersCake.jpeg" alt="Snickers Cake">
+            <h3>Snickers Cake</h3>
+            <p>Loaded with peanuts, caramel, and chocolate</p>
+          </div>
+          <div class="menu-card">
+            <img src="images/LotusBiscoffCheesecake.jpeg" alt="Lotus Biscoff Cheesecake">
+            <h3>Lotus Biscoff Cheesecake</h3>
+            <p>Creamy cheesecake with crunchy Biscoff base</p>
+          </div>
+        </div>
+      </section>
+      
+      <!-- COOKIES -->
+       <section id="cookies" class="menu-category cookies">
+        <div class="menu-header">Cookies</div>
+        <div class="card-container">
+          <div class="menu-card">
+            <img src="images/OreoChocolateCookie.jpeg" alt="Oreo Chocolate Cookie">
+            <h3>Oreo Chocolate Cookie</h3>
+            <p>Crunchy cookie with Oreo bits and chocolate drizzle</p>
+          </div>
+          <div class="menu-card">
+            <img src="images/PeanutCookie.jpeg" alt="Peanut Cookie">
+            <h3>Peanut Cookie</h3>
+            <p>Classic buttery cookie filled with roasted peanuts</p>
+          </div>
+          <div class="menu-card">
+            <img src="images/MintChocolateCookie.jpeg" alt="Mint Chocolate Cookie">
+            <h3>Mint Chocolate Cookie</h3>
+            <p>Soft cookie with mint flavor and chocolate chips</p>
+          </div>
+        </div>
+      </section>
+      
+      <!-- CUPCAKES -->
+       <section id="cupcakes" class="menu-category cupcakes">
+        <div class="menu-header">Cupcakes</div>
+        <div class="card-container">
+          <div class="menu-card">
+            <img src="images/VanillaCupcake.jpeg" alt="Vanilla Cupcake">
+            <h3>Vanilla Cupcake</h3>
+            <p>Fluffy vanilla base topped with sweet buttercream</p>
+          </div>
+          <div class="menu-card">
+            <img src="images/MintChocolateChipCupcake.jpeg" alt="Mint Chocolate Chip Cupcake">
+            <h3>Mint Chocolate Chip Cupcake</h3>
+            <p>Rich chocolate cupcake with a cool minty twist</p>
+          </div>
+        </div>
+      </section>
+      
+      <!-- PASTRIES -->
+       <section id="pastries" class="menu-category pastries">
+        <div class="menu-header">Pastries</div>
+        <div class="card-container">
+          <div class="menu-card">
+            <img src="images/ChocolateCroissants.jpeg" alt="Chocolate Croissants">
+            <h3>Chocolate Croissants</h3>
+            <p>Pastry filled with creamy chocolate</p>
+          </div>
+          <div class="menu-card">
+            <img src="images/FlakyChocolateCroissants.jpeg" alt="Flaky Chocolate Croissants">
+            <h3>Flaky Chocolate Croissants</h3>
+            <p>Light, buttery layers with melted chocolate inside</p>
+          </div>
+        </div>
+      </section>
+      
+      <!-- BREADS -->
+       <section id="breads" class="menu-category breads">
+        <div class="menu-header">Breads</div>
+        <div class="card-container">
+          <div class="menu-card">
+            <img src="images/Baguette.jpeg" alt="Baguette">
+            <h3>Baguette</h3>
+            <p>Crispy French-style bread with a soft interior</p>
+          </div>
+          <div class="menu-card">
+            <img src="images/HamburgerBuns.jpeg" alt="Hamburger Buns">
+            <h3>Hamburger Buns</h3>
+            <p>Soft and fluffy buns, perfect for juicy burgers</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+    
+  <footer class="custom-footer" id="contact">
+    <div class="footer-flex-row">
+      <img src="images/uitmlogo.png" alt="logo" class="footer-logo" />
+      <small class="footer-copy">&copy; 2025 Bread Basket Bakery. As a part of our IML470 assignment.</small>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const menuDropdown = document.getElementById('menuDropdown');
+
+    menuBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      menuDropdown.style.display = menuDropdown.style.display === 'block' ? 'none' : 'block';
+    });
+
+    document.addEventListener('click', function () {
+      menuDropdown.style.display = 'none';
+    });
+  </script>
+
+</body>
+</html>

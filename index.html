@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bread Basket Bakery</title>
+  <style>
+    :root {
+      --primary-brown: #5a3e3e; 
+      --light-brown: #e8c4c4;  
+      --cream-bg: #f9f1f0;    
+      --text-dark: #3a2a2a;   
+      --border-color: #d1a3a3; 
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    body {
+      font-family: 'Georgia', serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--cream-bg);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: white;
+      padding: 20px;
+      border-bottom: 1px solid var(--light-brown);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      background-color: white; 
+      padding: 5px 10px;
+      border-radius: 4px;
+    }
+
+    .logo-img {
+      height: 60px;
+      width: auto;
+      mix-blend-mode: multiply;
+    }
+
+    .logo-text {
+      margin: 0;
+      font-size: 1.5rem;
+      color: var(--primary-brown);
+    }
+
+    nav {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+
+    nav a, .dropbtn {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #4e2a1e;
+      font-weight: bold;
+      font-size: 16px;
+      padding: 10px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    nav a.active, nav a:hover {
+      text-decoration: underline;
+    }
+
+    .dropdown-nav {
+      display: inline-block;
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 160px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      margin-top: 5px;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 10px;
+      color: #4e2a1e;
+      text-decoration: none;
+      text-align: left;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f2c1a3;
+    }
+
+    .dropdown-nav:hover .dropdown-content {
+      display: block;
+    }
+
+    .hero {
+      position: relative;
+      height: 500px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .video-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .video-background video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .hero-text {
+      position: relative;
+      z-index: 1;
+      background-color: rgba(90, 62, 62, 0.7);
+      padding: 30px;
+      border-radius: 10px;
+      color: white;
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .hero button {
+      margin-top: 20px;
+      padding: 10px 25px;
+      background-color: var(--primary-brown);
+      border: none;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .hero button:hover {
+      background-color: var(--text-dark);
+    }
+
+    .carousel-section {
+      padding: 50px 10%;
+      text-align: center;
+      background-color: white;
+      position: relative;
+    }
+
+    .carousel-section h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: var(--primary-brown);
+    }
+
+    .carousel-container {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .carousel-track {
+      display: flex;
+      gap: 30px;
+      transition: transform 0.3s ease;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+    }
+
+    .carousel-track::-webkit-scrollbar {
+      display: none;
+    }
+
+    .carousel-item {
+      flex: 0 0 auto;
+      width: 250px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .carousel-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .carousel-item h3 {
+      margin: 15px 0 10px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: var(--primary-brown);
+    }
+
+    .view-btn {
+      background-color: var(--light-brown);
+      color: var(--text-dark);
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .view-btn:hover {
+      background-color: var(--border-color);
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: var(--primary-brown);
+      color: white;
+      border: none;
+      font-size: 2rem;
+      padding: 0 15px;
+      cursor: pointer;
+      z-index: 10;
+      border-radius: 5px;
+    }
+
+    .carousel-btn.left {
+      left: 0;
+    }
+
+    .carousel-btn.right {
+      right: 0;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--light-brown);
+      margin: 0;
+    }
+
+    .about {
+      padding: 50px 10%;
+      text-align: center;
+      background-color: white;
+    }
+
+    .about h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: var(--primary-brown);
+    }
+
+    .about p {
+      font-size: 1rem;
+      color: var(--text-dark);
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .custom-footer {
+      background-color: var(--primary-brown);
+      color: white;
+      padding: 30px 5%;
+      font-size: 0.9rem;
+    }
+
+    .footer-container-flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      max-width: 100px;
+      height: auto;
+    }
+
+    .footer-copy {
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+ <header>
+    <div class="logo-container">
+      <img src="images/logobaru.png" alt="The Bread Basket Logo" class="logo-img">
+      <h1 class="logo-text">The Bread Basket</h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+
+      <div class="dropdown-nav">
+        <a class="dropbtn" href="Menu.html">Menu ▼</a>
+        <div class="dropdown-content">
+          <a href="#cakes">Cakes</a>
+          <a href="#cookies">Cookies</a>
+          <a href="#cupcakes">Cupcakes</a>
+          <a href="#pastries">Pastries</a>
+          <a href="#breads">Breads</a>
+        </div>
+      </div>
+
+      <a href="order.html">Order</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="video-background">
+      <video autoplay muted loop playsinline>
+        <source src="images/bakery-video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="hero-text">
+      <h2>The Best Bakery in Town.</h2>
+      <p>Tasty. Organic. Convenient.</p>
+      <button onclick="document.getElementById('products').scrollIntoView({ behavior: 'smooth' })">Shop Now</button>
+    </div>
+  </section>
+
+  <section class="carousel-section" id="products">
+    <h2>Our Products</h2>
+    <button class="carousel-btn left" onclick="slideCarousel(-1)">&#8249;</button>
+    <div class="carousel-container">
+      <div class="carousel-track" id="carouselTrack">
+        <div class="carousel-item"><img src="images/cakes.jpg" alt="Cakes"><h3>CAKES</h3><a href="menu.html#cakes" class="view-btn">VIEW</a></div>
+        <div class="carousel-item"><img src="images/cookies.jpg" alt="Cookies"><h3>COOKIES</h3><a href="menu.html#cookies" class="view-btn">VIEW</a></div>
+        <div class="carousel-item"><img src="images/cupcakes.jpg" alt="Cupcakes"><h3>CUPCAKES</h3><a href="menu.html#cupcakes" class="view-btn">VIEW</a></div>
+        <div class="carousel-item"><img src="images/pastries (1).jpg" alt="Pastries"><h3>PASTRIES</h3><a href="menu.html#pastries" class="view-btn">VIEW</a></div>
+        <div class="carousel-item"><img src="images/breads.jpg" alt="Breads"><h3>BREADS</h3><a href="menu.html#breads" class="view-btn">VIEW</a></div>
+      </div>
+    </div>
+    <button class="carousel-btn right" onclick="slideCarousel(1)">&#8250;</button>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="about">
+    <h2>Our Motto</h2>
+    <p>Our mission is to make your day a little better.</p>
+  </section>
+
+  <footer class="custom-footer" id="contact">
+    <div class="footer-container-flex">
+      <img src="images/uitmlogo.png" alt="logo" class="footer-logo" />
+      <small class="footer-copy">&copy; 2025 Bread Basket Bakery. As a part of our IML470 assignment.</small>
+    </div>
+  </footer>
+
+  <script>
+    function slideCarousel(direction) {
+      const track = document.getElementById('carouselTrack');
+      const scrollAmount = 280;
+      track.scrollBy({
+        left: direction * scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+
+    const menuBtn = document.getElementById('menuBtn');
+    const menuDropdown = document.getElementById('menuDropdown');
+    menuBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      const isOpen = menuDropdown.style.display === 'block';
+      menuDropdown.style.display = isOpen ? 'none' : 'block';
+    });
+  </script>
+
+</body>
+</html>
